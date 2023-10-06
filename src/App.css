@@ -1,0 +1,16 @@
+.cardmovie {
+    box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.63);
+-webkit-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.63);
+-moz-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.63);
+border: 1px solid black;
+border-radius: 10px;
+overflow: hidden;
+
+}
+
+.card_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
