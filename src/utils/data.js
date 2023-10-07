@@ -1,6 +1,8 @@
-export const urlBase =
-  "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=es-US&page=1&sort_by=popularity.desc";
-4;
+/* export const urlBase =
+  "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=es-US&page=1&sort_by=popularity.desc"; */
+
+  export const urlBase = 'https://api.themoviedb.org/3/find/avenger?external_source=imdb_id'
+
 
 export const options = {
   method: "GET",
@@ -12,3 +14,5 @@ export const options = {
 };
 
 export const imageBase = "https://image.tmdb.org/t/p/w500";
+
+export const apiKey = import.meta.env.VITE_API_KEY
