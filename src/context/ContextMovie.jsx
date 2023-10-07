@@ -1,8 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { urlBase, options, imageBase } from "../utils/data";
-
-
-
+import PropTypes from "prop-types";
 
 export const ContextMovie = createContext();
 
@@ -16,5 +14,13 @@ export const ContextMovieProvider = ({ children }) => {
       .catch((err) => console.error("error:" + err));
   }, []);
 
-  return <ContextMovie.Provider value={{movies, imageBase}}>{children}</ContextMovie.Provider>;
+  return (
+    <ContextMovie.Provider value={{ movies, imageBase }}>
+      {children}
+    </ContextMovie.Provider>
+  );
 };
+
+ContextMovieProvider.propTypes = {
+  children: PropTypes.node,
+}

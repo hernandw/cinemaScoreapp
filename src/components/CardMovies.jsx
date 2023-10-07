@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ContextMovie } from "../context/ContextMovie";
+import PropTypes from "prop-types";
 
 const CardMovies = ({ poster_path, title, overview, vote_average }) => {
     const { imageBase } = useContext(ContextMovie);
@@ -29,5 +30,12 @@ const CardMovies = ({ poster_path, title, overview, vote_average }) => {
     
   );
 };
+
+CardMovies.propTypes = {
+  poster_path: PropTypes.string,
+  title: PropTypes.string,
+  overview: PropTypes.string,
+  vote_average: PropTypes.number,
+}
 
 export default CardMovies;
