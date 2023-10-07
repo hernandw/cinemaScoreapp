@@ -6,6 +6,7 @@ export const ContextMovie = createContext();
 
 export const ContextMovieProvider = ({ children }) => {
   const [movies, setMovies] = useState();
+  const [search, setSearch] = useState()
 
   useEffect(() => {
     fetch(urlBase, options)
@@ -15,7 +16,7 @@ export const ContextMovieProvider = ({ children }) => {
   }, []);
 
   return (
-    <ContextMovie.Provider value={{ movies, imageBase }}>
+    <ContextMovie.Provider value={{ movies, imageBase, setSearch, search }}>
       {children}
     </ContextMovie.Provider>
   );

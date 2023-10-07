@@ -14,20 +14,21 @@ const CardMovies = ({ poster_path, title, overview, vote_average }) => {
       }
     }
   return (
-    
-      <div className="w-25 cardmovie">
-        <img
-          src={imageBase + poster_path}
-          className="card-img-top"
-          alt={title}
-        />
-        <div className="card-body p-4 d-flex justify-content-between">
-              <h5 className="card-title">{title}</h5>
-              <p className={`text-${getColor(vote_average)} fw-bold bg-color average`}>{vote_average}</p>
-          {/* <p className="card-text">{overview}</p> */}
-        </div>
+    <div className="w-25 cardmovie">
+      <img src={imageBase + poster_path} className="card-img-top" alt={title} />
+      <div className="card-body p-4 d-flex justify-content-between">
+        <h5 className="card-title">{title}</h5>
+        <p
+          className={`text-${getColor(vote_average)} fw-bold bg-color average`}
+        >
+          {vote_average}
+        </p>
       </div>
-    
+      <div className="overview">
+        <h3>Overview</h3>
+        <p className="card-text">{overview}</p>
+      </div>
+    </div>
   );
 };
 
