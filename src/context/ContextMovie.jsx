@@ -10,8 +10,9 @@ export const ContextMovieProvider = ({ children }) => {
   const [search, setSearch] = useState("");
   const API_KEY = apiKey;
   const baseUrl = "https://api.themoviedb.org/3/";
-  const API_URL =
-    baseUrl +
+  const searchUrl = `${baseUrl}search/movie?api_key=${API_KEY}&query=${search}`;
+  
+   const API_URL = baseUrl +
     "/discover/movie?sort_by=popularity.desc&include_adult=false&include_video=false&api_key=" +
     API_KEY;
 
@@ -22,8 +23,12 @@ export const ContextMovieProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getMovies(API_URL);
-  }, [API_URL]);
+    if (!search) {
+      getMovies(API_URL);
+    } else {
+      getMovies(searchUrl);
+    }
+  }, [search]);
 
   return (
     <ContextMovie.Provider value={{ movies, imageBase, setSearch, search }}>

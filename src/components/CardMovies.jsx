@@ -21,7 +21,7 @@ const CardMovies = ({ poster_path, title, overview, vote_average }) => {
         <p
           className={`text-${getColor(vote_average)} fw-bold bg-color average`}
         >
-          {vote_average}
+          {(vote_average).toFixed(1)}
         </p>
       </div>
       <div className="overview">

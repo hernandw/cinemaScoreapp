@@ -1,3 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(122, 112, 112, 0.89);
+  color: white;
+}
+
 .cardmovie {
   box-shadow: 10px 10px 5px -7px rgba(0, 0, 0, 0.63);
   -webkit-box-shadow: 10px 10px 5px -7px rgba(0, 0, 0, 0.63);
@@ -11,7 +22,7 @@
 .card_container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 30px;
 }
 

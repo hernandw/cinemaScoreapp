@@ -17,15 +17,19 @@ const App = () => {
   }
 
   return (
-    <div>
-      <h1 className="text-center mb-5 mt-5">Movies</h1>
-      <Search />
+    <div className="container">
+      <div className="d-flex justify-content-between align-items-center">
+        <h1 className="w-50"> Movies Trailer App </h1>
+        <Search />
+      </div>
       <div>
         <div className="card_container">
           {resultados && resultados.length > 0 ? (
             resultados?.map((movie) => <CardMovies key={movie.id} {...movie} />)
           ) : (
-            <h3>No hay películas asociadas a tu búsqueda. Intenta con otro título</h3>
+            <h3>
+              No hay películas asociadas a tu búsqueda. Intenta con otro título
+            </h3>
           )}
         </div>
       </div>

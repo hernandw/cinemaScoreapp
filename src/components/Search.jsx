@@ -5,7 +5,7 @@ const Search = () => {
   const { search, setSearch } = useContext(ContextMovie);
   return (
     <div>
-      <input className="form-control w-25 mx-auto mt-5 mb-5"
+      <input className="form-control w-full mx-auto mt-5 mb-5"
         type="text"
         placeholder="Search ..."
         value={search}
