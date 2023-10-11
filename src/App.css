@@ -1,3 +1,11 @@
+:root {
+  --color-background: #39445a;
+  --color-text: #ffffff;
+  --color-bg-info: #3c0738;
+  --color-border: #000;
+  --color-footer: #1c5683;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,25 +13,27 @@
 }
 
 body {
-  background-color: rgba(122, 112, 112, 0.89);
-  color: white;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 .cardmovie {
   box-shadow: 10px 10px 5px -7px rgba(0, 0, 0, 0.63);
   -webkit-box-shadow: 10px 10px 5px -7px rgba(0, 0, 0, 0.63);
   -moz-box-shadow: 10px 10px 5px -7px rgba(0, 0, 0, 0.63);
-  border: 1px solid black;
+  border: 1px solid var(--color-border);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  max-width: 350px;
 }
 
 .card_container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 30px;
+  padding: 30px;
 }
 
 .average {
@@ -37,7 +47,7 @@ body {
 }
 
 .bg-color {
-  background-color: #3c0738;
+  background-color: var(--color-bg-info);
   border-radius: 10px;
 }
 
@@ -47,8 +57,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #3c0738;
-  color: white;
+  background-color: var(--color-bg-info);
+  color: var(var(--color-text));
   max-width: 100%;
   transform: translateY(101%);
   transition: transform 0.3s ease-in;
@@ -56,4 +66,55 @@ body {
 
 .cardmovie:hover .overview {
   transform: translateY(0);
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: var(--color-background);
+  padding-bottom: 15px;
+  box-shadow: 0px 1px 5px var(--color-border);
+  color: var(--color-text);
+  padding: 30px;
+  flex-direction: column;
+}
+.footer {
+  background-color: var(--color-bg-info);
+  color: var(--color-text);
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 15px;
+}
+
+.search {
+  width: 80%;
+}
+
+@media screen and (min-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 100px;
+  }
+  .search {
+    width: 50%;
+  }
+
+  .card_container{
+    padding: 50px 30px;
+  }
+
+  
+}
+
+@media screen and (min-width: 768px) {
+  .search {
+    width: 30%;
+  }
+  .card_container{
+    padding: 50px 100px;
+  }
 }

@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { ContextMovie } from "./context/ContextMovie";
 import CardMovies from "./components/CardMovies";
 import "./App.css";
-import Search from "./components/Search";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const App = () => {
   const { movies, search } = useContext(ContextMovie);
@@ -17,12 +18,9 @@ const App = () => {
   }
 
   return (
-    <div className="container">
-      <div className="d-flex justify-content-between align-items-center">
-        <h1 className="w-50"> Movies Trailer App </h1>
-        <Search />
-      </div>
-      <div>
+    <div>
+      <NavBar />
+      <>
         <div className="card_container">
           {resultados && resultados.length > 0 ? (
             resultados?.map((movie) => <CardMovies key={movie.id} {...movie} />)
@@ -32,7 +30,8 @@ const App = () => {
             </h3>
           )}
         </div>
-      </div>
+      </>
+      <Footer />
     </div>
   );
 };

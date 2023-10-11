@@ -14,7 +14,7 @@ const CardMovies = ({ poster_path, title, overview, vote_average }) => {
       }
     }
   return (
-    <div className="w-25 cardmovie">
+    <div className="cardmovie">
       <img src={imageBase + poster_path} className="card-img-top" alt={title} />
       <div className="card-body p-4 d-flex justify-content-between">
         <h5 className="card-title">{title}</h5>
