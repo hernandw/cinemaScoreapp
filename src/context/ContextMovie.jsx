@@ -8,9 +8,10 @@ export const ContextMovie = createContext();
 export const ContextMovieProvider = ({ children }) => {
   const [movies, setMovies] = useState();
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(2)
   const API_KEY = apiKey;
   const baseUrl = "https://api.themoviedb.org/3/";
-  const searchUrl = `${baseUrl}search/movie?api_key=${API_KEY}&query=${search}`;
+  const searchUrl = `${baseUrl}search/movie?api_key=${API_KEY}&query=${search}&page=${page}`;
   
    const API_URL = baseUrl +
     "/discover/movie?sort_by=popularity.desc&include_adult=false&include_video=false&api_key=" +
@@ -31,7 +32,7 @@ export const ContextMovieProvider = ({ children }) => {
   }, [search]);
 
   return (
-    <ContextMovie.Provider value={{ movies, imageBase, setSearch, search }}>
+    <ContextMovie.Provider value={{ movies, imageBase, setSearch, search, API_KEY }}>
       {children}
     </ContextMovie.Provider>
   );

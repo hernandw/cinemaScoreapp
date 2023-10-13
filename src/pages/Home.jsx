@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ContextMovie } from "../context/ContextMovie";
 import CardMovies from "../components/CardMovies";
+import Pagination from "../components/Pagination";
 
 
 
@@ -18,6 +19,7 @@ const Home = () => {
 
   return (
     <div>
+      <h1 className="text-center pt-5">Movies</h1>
       <div className="card_container">
         {resultados && resultados.length > 0 ? (
           resultados?.map((movie) => <CardMovies key={movie.id} {...movie} />)
@@ -26,6 +28,9 @@ const Home = () => {
             No hay películas asociadas a tu búsqueda. Intenta con otro título
           </h3>
         )}
+      </div>
+      <div className="pagination">
+        <Pagination />
       </div>
     </div>
   );

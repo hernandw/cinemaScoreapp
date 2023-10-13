@@ -77,12 +77,12 @@ a {
 
 /* NAVBAR */
 .navbar {
-  background-color: var(--color-background);
-  padding-bottom: 15px;
   box-shadow: 0px 1px 5px var(--color-border);
-  color: var(--color-text);
-  padding: 30px;
-  flex-direction: column;
+  padding-bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
 .footer {
   background-color: var(--color-bg-info);
@@ -90,10 +90,11 @@ a {
   height: 100px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  
   align-items: center;
   justify-content: space-around;
   font-size: 15px;
+  
   
 }
 
@@ -104,17 +105,22 @@ a {
 .layout {
   height: 100vh;
   display: grid;
-  grid-template-rows: 150px 1fr 100px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 180px 1fr 100px;
 }
 
-@media screen and (min-width: 600px) {
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 600px) {
   .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0px 100px;
+    padding: 20px 50px;
   }
   .search {
-    width: 50%;
+    width: 80%;
   }
 
   .card_container{
@@ -124,11 +130,14 @@ a {
   
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
+  .navbar {
+    
+    justify-content: space-between;
+    padding: 0 100px;
+  }
   .search {
     width: 30%;
   }
-  .card_container{
-    padding: 50px 100px;
-  }
+  
 }
