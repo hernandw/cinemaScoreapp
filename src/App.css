@@ -4,6 +4,7 @@
   --color-bg-info: #3c0738;
   --color-border: #000;
   --color-footer: #1c5683;
+  --color-link: #ffb300;
 }
 
 * {
@@ -32,6 +33,10 @@ a {
   text-decoration: none;
   color: var(--color-text);
   cursor: pointer;
+}
+
+a:hover {
+  color: var(--color-link);
 }
 
 .card_container {

@@ -8,14 +8,15 @@ export const ContextMovie = createContext();
 export const ContextMovieProvider = ({ children }) => {
   const [movies, setMovies] = useState();
   const [search, setSearch] = useState("");
-  const [page, setPage] = useState(2)
+  const [page, setPage] = useState(1)
+  const [productPerPage, setProductPerPage] = useState(10);
   const API_KEY = apiKey;
   const baseUrl = "https://api.themoviedb.org/3/";
   const searchUrl = `${baseUrl}search/movie?api_key=${API_KEY}&query=${search}&page=${page}`;
   
    const API_URL = baseUrl +
-    "/discover/movie?sort_by=popularity.desc&include_adult=false&include_video=false&api_key=" +
-    API_KEY;
+    "/discover/movie?api_key=" +
+    API_KEY + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=" + page;
 
   const getMovies = (url) => {
     fetch(url)
@@ -29,10 +30,10 @@ export const ContextMovieProvider = ({ children }) => {
     } else {
       getMovies(searchUrl);
     }
-  }, [search]);
+  }, [search, page]);
 
   return (
-    <ContextMovie.Provider value={{ movies, imageBase, setSearch, search, API_KEY }}>
+    <ContextMovie.Provider value={{ movies, imageBase, setSearch, search, API_KEY, page, setPage, productPerPage }}>
       {children}
     </ContextMovie.Provider>
   );

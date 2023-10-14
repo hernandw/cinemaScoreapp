@@ -6,7 +6,7 @@ import Pagination from "../components/Pagination";
 
 
 const Home = () => {
-  const { movies, search } = useContext(ContextMovie);
+  const { movies, search, productPerPage, page, setPage } = useContext(ContextMovie);
   let resultados = "";
 
   if (!search) {
@@ -30,7 +30,8 @@ const Home = () => {
         )}
       </div>
       <div className="pagination">
-        <Pagination />
+        <Pagination productPerPage={productPerPage} totalProducts={100} setPage={setPage} page={page} />
+        
       </div>
     </div>
   );
