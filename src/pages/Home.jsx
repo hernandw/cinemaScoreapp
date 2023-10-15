@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { ContextMovie } from "../context/ContextMovie";
 import CardMovies from "../components/CardMovies";
 import Pagination from "../components/Pagination";
-import Genres from "../components/Genres";
+/* import Genres from "../components/Genres"; */
 
 
 
 const Home = () => {
-  const { movies, search, productPerPage, page, setPage, genres } = useContext(ContextMovie);
+  const { movies, search, productPerPage, page, setPage } = useContext(ContextMovie);
   let resultados = "";
 
   if (!search) {
