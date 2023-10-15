@@ -15,7 +15,7 @@ const Footer = () => {
           <p>Trending</p>
         </Link>
       </div>
-      <div>
+      {/* <div>
         <Link
           className="d-flex flex-column align-items-center"
           to="/favourites"
@@ -23,12 +23,12 @@ const Footer = () => {
           <FaHeart />
           <p>Favorites</p>
         </Link>
-      </div>
+      </div> */}
 
-      <div className="d-flex flex-column align-items-center">
+     {/*  <div className="d-flex flex-column align-items-center">
         <FaDesktop />
         <p>TV Series</p>
-      </div>
+      </div> */}
       <div>
         <Link
           className="d-flex flex-column align-items-center justify-content-center"
